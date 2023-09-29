@@ -12,6 +12,7 @@ import Pengaturan from "../screens/Pengaturan";
 import SecondScreen from "../screens/SecondScreen";
 import Detail from "../screens/Detail";
 import Pengeluaran from "../screens/Pengeluaran";
+import Beranda from "../screens/Beranda";
 
 const MainStack = createNativeStackNavigator();
 const Main = () => {
@@ -41,6 +42,18 @@ const MainTabs = () => {
       }}
     >
       {/* these icons using Ionicons */}
+      <Tabs.Screen
+        name="Beranda"
+        component={Beranda}
+        options={{
+          tabBarLabel: ({ focused }) => (
+            <TabBarText focused={focused} title="Beranda" />
+          ),
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} icon={"md-home"} />
+          ),
+        }}
+      />
       <Tabs.Screen
         name="Pemasukan"
         component={Pemasukan}
